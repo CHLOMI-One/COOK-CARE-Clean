@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cook & Care</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .lang-select {
+      margin: 20px 0;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cook & Care</h1>
+  <div class="lang-select">
+    <label for="language">Language / שפה:</label>
+    <select id="language" onchange="setLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="he">עברית</option>
+    </select>
+  </div>
+  <div>
+    <button onclick="window.location.href='signup.html'">Sign Up</button>
+    <button onclick="window.location.href='request.html'">Submit a Meal Request</button>
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      if (lang === "he") {
+        document.querySelector("h1").innerText = "קוק & קר";
+        document.querySelector("label").innerText = "שפה / Language:";
+        document.querySelectorAll("button")[0].innerText = "הרשמה";
+        document.querySelectorAll("button")[1].innerText = "שלח בקשת ארוחה";
+      } else {
+        document.querySelector("h1").innerText = "Cook & Care";
+        document.querySelector("label").innerText = "Language / שפה:";
+        document.querySelectorAll("button")[0].innerText = "Sign Up";
+        document.querySelectorAll("button")[1].innerText = "Submit a Meal Request";
+      }
+    }
+  </script>
+</body>
+</html>
